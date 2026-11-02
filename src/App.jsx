@@ -6,6 +6,8 @@ import Contact from "./pages/Contact Us/Contact";
 import UnitDetails from "./pages/Units/UnitDetails"
 import Layout from "./components/Layout/Layout";
 import Units from './pages/Units/Units'
+import ZonesData from './pages/Zones/ZonesData'
+import DevelopersData from "./pages/Developers/DevelopersData";
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
         <Route path="/units/:id" element={<UnitDetails/>}/>
         <Route path="/units" element={<Units />} />
         <Route path="/zones" element={<Zones />} />
+        <Route path="/zones/:id" element={<ZonesData/>}/>
         <Route path="/developers" element={<Developers />} />
+        <Route path="/developers/:id" element={<DevelopersData/>}/>
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         </Route>

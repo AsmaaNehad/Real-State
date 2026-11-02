@@ -25,15 +25,18 @@ export default function Navbar() {
           <NavLink
             key={link.name}
             to={link.path}
-        className="text-base lg:text-lg font-lato font-bold text-[#847D7D] transition-colors hover:text-[#8E1616] hover:underline hover:underline-offset-8">
-
+            className="text-base lg:text-lg font-lato font-bold text-[#847D7D] transition-colors hover:text-[#8E1616] hover:underline hover:underline-offset-8"
+          >
             {link.name}
           </NavLink>
         ))}
       </div>
 
       <div className="hidden md:block">
-        <Buttons btnTitle={"Register"} btnStyle={"font-lato text-white py-2 px-6 rounded-md"} />
+        <Buttons
+          btnTitle={"Register"}
+          btnStyle={"font-lato text-white py-2 px-6 rounded-md"}
+        />
       </div>
 
       <button
@@ -73,13 +76,17 @@ export default function Navbar() {
             key={link.name}
             to={link.path}
             onClick={() => setMenu(false)}
-         className="text-base lg:text-lg font-lato font-bold text-[#847D7D] transition-colors hover:text-[#8E1616] hover:underline hover:underline-offset-8">
+            className="text-base lg:text-lg font-lato font-bold text-[#847D7D] transition-colors hover:text-[#8E1616] hover:underline hover:underline-offset-8"
+          >
             {link.name}
           </NavLink>
         ))}
 
         <div onClick={() => setMenu(false)}>
-          <Buttons btnTitle={"Register"} btnStyle={"font-lato text-white py-2 px-6 rounded-md"} />
+          <Buttons
+            btnTitle={"Register"}
+            btnStyle={"font-lato text-white py-2 px-6 rounded-md"}
+          />
         </div>
       </aside>
     </nav>
