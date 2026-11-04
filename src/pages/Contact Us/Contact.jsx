@@ -10,7 +10,7 @@ import Telephone from "../../assets/Telephone.svg";
 import facebook from "../../assets/facebook.svg";
 import x from "../../assets/Xred.svg";
 import instagram from "../../assets/Insta.svg";
-import tiktok from "../../assets/tiktokIcon.svg";
+import tiktok from "../../assets/TiktokIcon.svg";
 
 function Contact() {
   return (

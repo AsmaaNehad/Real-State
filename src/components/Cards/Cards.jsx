@@ -18,7 +18,7 @@ function Cards({
   const navigate = useNavigate();
 
   return (
-    <div className="max-w-110.5 h-auto border border-[#EAEAEA] rounded-2xl shadow-Card hover:shadow-xl">
+    <div className="max-w-110.5 h-auto border border-[#EAEAEA] rounded-2xl shadow-Card hover:shadow-xl flex-col justify-between transition-shadow duration-300">
       <div className="relative">
         <img src={cardImg} className="rounded-t-2xl w-[442px] h-[284px]" />
         {status == "AVAILABLE" ? (

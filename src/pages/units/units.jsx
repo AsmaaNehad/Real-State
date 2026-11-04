@@ -34,6 +34,7 @@ function Units() {
   useEffect(() => {
     allUnits();
   }, []);
+  
 
   const filteredUnits = units.filter((unit) => {
     return (
@@ -92,10 +93,11 @@ function Units() {
           <option value="" disabled hidden>
             Developer
           </option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
+          <option value="">All Developers</option>
+          <option value="elmorshedy">El Morshedy</option>
+          <option value="lagoon">Lagoon</option>
+          <option value="HM Group">HM Group</option>
+          <option value="palm hills">Palm Hills</option>
         </select>
         <select
           value={zone}
@@ -105,10 +107,9 @@ function Units() {
           <option value="" disabled hidden>
             Zone
           </option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
+          <option value="">All Zones</option>
+          <option value="Alexandria">Alexandria</option>
+          <option value="Cairo">Cairo</option>
         </select>
         <select
           value={projects}
@@ -118,10 +119,10 @@ function Units() {
           <option value="" disabled hidden>
             Projects
           </option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
+          <option value="">All Projects</option>
+          <option value="hills">Hills</option>
+          <option value="Hayah">Hayah</option>
+          <option value="Hayah resident">Hayah resident</option>
         </select>
         <select
           value={status}
@@ -131,10 +132,9 @@ function Units() {
           <option value="" disabled hidden>
             Status
           </option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
+          <option value="">All Status</option>
+          <option value="AVAILABLE">Available</option>
+          <option value="SOLD">Sold</option>
         </select>
         <select
           value={price}
@@ -144,17 +144,26 @@ function Units() {
           <option value="" disabled hidden>
             Price Range
           </option>
+          <option value="">All Prices</option>
           <option value="1000000">1000000</option>
           <option value="2000000">2000000</option>
+          <option value="3000000">3000000</option>
+          <option value="4000000">4000000</option>
           <option value="5000000">5000000</option>
+          <option value="6000000">6000000</option>
+          <option value="7000000">7000000</option>
+          <option value="8000000">8000000</option>
+          <option value="9000000">9000000</option>
+          <option value="10000000">10000000</option>
+          <option value="20000000">20000000</option>
         </select>
       </section>
       <div className=" flex justify-center items-center">
-        <button className="text-white bg-linear-[#8E1616]-[#C34B4B] w-150 h-10 rounded-xl">
+        <button className="text-white bg-linear-to-r from-[#8E1616] to-[#C34B4B] w-150 h-10 rounded-xl cursor-pointer font-lato font-bold text-lg flex justify-center items-center gap-2 my-5">
           Search
         </button>
       </div>
-      <div className="grid grid-cols-1 gap-5 sm:grid sm:grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 m-10 px-20">
+      <div className="m-0 p-0 grid grid-cols-1 gap-5 sm:grid sm:grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 md:m-8 md:px-10">
         {loading ? (
           <h3>Loading...</h3>
         ) : (
