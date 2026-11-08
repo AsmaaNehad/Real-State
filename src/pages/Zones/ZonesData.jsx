@@ -2,16 +2,18 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import api from "../utils/api";
 import Map2 from "../../assets/Map2.svg";
+import Loading from "../../components/Loading";
 
 function ZonesData() {
-  const { id } = useParams();
+  const {id, itemId } = useParams();
   const [zone, setZone] = useState("");
   const [loading, setLoading] = useState(true);
 
   const getZoneData = async () => {
     try {
-      const response = await api.get(`/zone/${id}`);
-      setZone(response.data);
+      const response = await api.get(`/zone/${itemId}`);
+      const data = response.data;
+      setZone(data);
     } catch (err) {
       console.log(err);
     } finally {
@@ -20,12 +22,12 @@ function ZonesData() {
   };
   useEffect(() => {
     getZoneData();
-  }, [id]);
+  }, [itemId]);
   if (loading) {
-    <h1>loading...</h1>;
+   return <Loading />;
   }
   if (!zone) {
-    <h1>Unit Not Found</h1>;
+    return <h1>Unit Not Found</h1>;
   }
 
   return (

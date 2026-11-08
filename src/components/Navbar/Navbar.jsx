@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <nav className="h-26.25 bg-[#EBEBEB] px-4 md:px-6 flex justify-between items-center sticky top-0 z-50 shadow-sm">
-      <NavLink to="/" end className="flex items-center h-full">
+      <NavLink to="/" end className="flex items-center h-full ">
         <img src={Logo} alt="Logo" className="h-full w-auto object-contain" />
       </NavLink>
 
@@ -25,7 +25,10 @@ export default function Navbar() {
           <NavLink
             key={link.name}
             to={link.path}
-            className="text-base lg:text-lg font-lato font-bold text-[#847D7D] transition-colors hover:text-[#8E1616] hover:underline hover:underline-offset-8"
+            className={({
+              isActive
+            }) => `text-base lg:text-lg font-lato font-bold text-[#847D7D] transition-colors hover:text-[#8E1616] hover:underline hover:underline-offset-8
+            ${isActive ? "text-red-900 underline underline-offset-8" : "unline-offset-8"}`}
           >
             {link.name}
           </NavLink>
@@ -85,7 +88,7 @@ export default function Navbar() {
         <div onClick={() => setMenu(false)}>
           <Buttons
             btnTitle={"Register"}
-            btnStyle={"font-lato text-white py-2 px-6 rounded-md"}
+            btnStyle={"font-lato text-white py-2 px-6 rounded-md "}
           />
         </div>
       </aside>

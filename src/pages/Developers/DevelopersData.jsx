@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import api from "../utils/api";
+import Loading from "../../components/Loading";
 function DevelopersData() {
   const { id } = useParams();
   const [developer, setDeveloper] = useState("");
@@ -22,14 +23,14 @@ function DevelopersData() {
   
 
   if (loading) {
-    <h1>loading...</h1>;
+    return <Loading />;
   }
   if (!developer) {
     <h1>Unit Not Found</h1>;
   }
 
   return (
-    <div className="mx-7">
+    <div className="mx-6">
       <div>
         <img
           className="w-full h-[525px] object-cover rounded-lg"
@@ -38,7 +39,7 @@ function DevelopersData() {
 
         <section className="flex justify-between my-[69px]">
           <div>
-            <p className="font-lato font-bold text-[40px] text-[#8E1616]">
+            <p className="font-lato font-bold text-[25px] md:text-[40px] text-[#8E1616]">
               {developer.description_en}
             </p>
             <div className="flex gap-1">

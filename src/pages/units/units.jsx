@@ -1,4 +1,6 @@
 import Hero from "../../components/Hero section/Hero";
+import BedroomIcon from "../../assets/BedroomIcon.svg";
+import BathroomIcon from "../../assets/BathroomIcon.svg";
 import unites from "../../assets/unites.png";
 import searchIcon from "../../assets/searchIcon.svg";
 import { useState, useEffect } from "react";
@@ -6,6 +8,7 @@ import api from "../../pages/utils/api";
 import Cards from "../../components/Cards/Cards";
 import DetailsBtn from "../../components/Buttons/DetailsBtn";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../components/Loading";
 
 function Units() {
   const navigate = useNavigate();
@@ -18,7 +21,6 @@ function Units() {
   const [projects, setProjects] = useState("");
   const [status, setStatus] = useState("");
   const [price, setPrice] = useState("");
-  
 
   const allUnits = async () => {
     try {
@@ -34,7 +36,6 @@ function Units() {
   useEffect(() => {
     allUnits();
   }, []);
-  
 
   const filteredUnits = units.filter((unit) => {
     return (
@@ -159,21 +160,23 @@ function Units() {
         </select>
       </section>
       <div className=" flex justify-center items-center">
-        <button className="text-white bg-linear-to-r from-[#8E1616] to-[#C34B4B] w-150 h-10 rounded-xl cursor-pointer font-lato font-bold text-lg flex justify-center items-center gap-2 my-5">
+        <button className="text-white bg-linear-to-r from-[#8E1616] to-[#C34B4B] hover:brightness-125 transition duration-200 w-150 h-10 rounded-xl cursor-pointer font-lato font-bold text-lg flex justify-center items-center gap-2 my-5">
           Search
         </button>
       </div>
-      <div className="m-0 p-0 grid grid-cols-1 gap-5 sm:grid sm:grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 md:m-8 md:px-10">
+      <div className=" grid grid-cols-1 justify-items-center gap-5 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 lg:my-8 lg:mx-1 xl:mx-5 xl:my-8">
         {loading ? (
-          <h3>Loading...</h3>
+          <Loading/>
         ) : (
           filteredUnits.map((unit) => {
             return (
               <div key={unit.id}>
                 <Cards
                   cardImg={unit.images[0]}
-                  bedrooms={unit.bedrooms}
-                  bathrooms={unit.bathrooms}
+                  bedrooms={`${unit.bedrooms} Bedrooms`}
+                  firstIcon={BedroomIcon}
+                  secondIcon={BathroomIcon}
+                  bathrooms={`${unit.bathrooms} Bathrooms`}
                   size={unit.size}
                   title={unit.title_en}
                   desc={unit.description_en}

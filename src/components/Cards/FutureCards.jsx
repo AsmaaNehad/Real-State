@@ -2,12 +2,13 @@ function FutureCards({ imgSrc, logo, logoTitle, logoHeader, btn }) {
   return (
     <div>
       <div className="bg-[#ffffff] shadow-Card rounded-xl border border-[#EAEAEA] p-4 flex-col justify-between hover:shadow-xl transition-shadow duration-300">
-        <div className="rounded-xl overflow-hidden mb-4">
+        <div className="rounded-xl overflow-hidden mb-4 relative">
           <img
             src={imgSrc}
             alt="Palm Hills"
             className="w-full h-80 object-cover"
           />
+          <span className="absolute bg-[#8E1616] rounded-sm top-6.25 right-1.75 text-[#ffffff] font-lato text-[16px] px-[15px] py-[3px]">New Cairo</span>
         </div>
         <div className="mb-4 px-2 flex justify-start gap-2">
           <img src={logo} alt="logo" className=" h-auto object-contain" />

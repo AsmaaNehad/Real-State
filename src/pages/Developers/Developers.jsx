@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import FutureCards from "../../components/Cards/FutureCards";
 import CardLogo1 from "../../assets/CardLogo1.svg";
 import DetailsBtn from "../../components/Buttons/DetailsBtn";
-
+import Loading from "../../components/Loading";
 import { useNavigate } from "react-router-dom";
 function Developers() {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ function Developers() {
     getDeveloper();
   }, []);
   if (loading) {
-    <h1>loading...</h1>;
+    return <Loading />;
   }
   if (!developers) {
     <h1>developer Not Found</h1>;
@@ -40,7 +40,7 @@ function Developers() {
         }
         icons={true}
       />
-      <section className="grid grid-cols-1 gap-5 sm:grid sm:grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 m-10 px-20">
+      <section className="grid grid-cols-1 gap-5 sm:grid sm:grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 mx-7 my-10 px-3 md:mx-3 lg:mx-4 lg:px-4 xl:m-10 xl:px-20">
         {developers.map((developer) => {
           return (
             <div key={developer.id}>

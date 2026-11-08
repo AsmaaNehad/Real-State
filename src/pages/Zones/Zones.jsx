@@ -3,6 +3,7 @@ import mainzone from "../../assets/mainzone.png";
 import api from "../utils/api";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../components/Loading";
 function Zones() {
   const navigate = useNavigate();
   const [zones, setZones] = useState([]);
@@ -32,9 +33,9 @@ function Zones() {
         }
         icons={true}
       />
-      <section className="grid grid-cols-1 gap-4 md:grid md:grid-cols-2 lg:grid lg:grid-cols-4 mx-15 my-[87px]">
+      <section className="grid grid-cols-1 justify-items-center gap-4 md:grid md:grid-cols-2 lg:grid lg:grid-cols-4 mx-15 my-[87px]">
         {loading ? (
-          <h3>Loading...</h3>
+          <Loading/>
         ) : (
           zones.map((zone) => {
             return (
@@ -42,7 +43,7 @@ function Zones() {
                 key={zone.id}
                 src={zone.images}
                 className="cursor-pointer hover:scale-105 transition-transform duration-300 w-[330px] h-[220px]"
-                onClick={() => navigate(`/zones/${zone.id}`)}
+                onClick={() => navigate(`/zones/${zone.id}`, { state: { image: zone.images } }) }
               />
             );
           })

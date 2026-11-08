@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import api from "../utils/api";
 import Map2 from "../../assets/Map2.svg";
+import Loading from "../../components/Loading";
 
 function UniteDetails() {
   const { id } = useParams();
@@ -26,7 +27,7 @@ function UniteDetails() {
   
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <Loading />;
   }
   if (!unit) {
     return <h1> Unit Not Found</h1>;
@@ -37,13 +38,13 @@ function UniteDetails() {
         <div className="w-full object-cover rounded-lg">
           <img
             src={unit.images[isActive]}
-            className="w-full h-[562px] object-cover"
+            className="w-full h-140.5 object-cover"
           />
         </div>
-        <div className=" overflow-hidden cursor-pointer flex justify-around items-center">
+        <div className=" overflow-hidden cursor-pointer flex justify-start gap-10 items-center">
           {unit.images.map((img, index) => {
             return (
-              <div key={img} className="">
+              <div key={img.id} className="">
                 <img
                   src={img}
                   alt="Unit"

@@ -13,7 +13,7 @@ const Hero = ({ bg, title, desc, btn, icons }) => {
         <h1 className="font-heading font-bold text-[#EEEEEE] text-3xl md:text-4xl lg:text-[48px] w-full max-w-140 mb-6 md:mb-8">
           {title}
         </h1>
-        <p className="text-[#CEC7C7] font-lato font-bold text-sm md:text-base lg:text-lg w-full max-w-247 mb-8 md:mb-12">
+        <p className="text-[#CEC7C7] font-lato font-bold text-sm md:text-base lg:text-lg w-full max-w-180 xl:max-w-247 mb-8 md:mb-12">
           {desc}
         </p>
 
@@ -21,7 +21,7 @@ const Hero = ({ bg, title, desc, btn, icons }) => {
           <Buttons
             btnTitle={btn}
             btnStyle={
-              "w-full max-w-64.5 text-base md:text-[20px] py-2 px-6 hover:brightness-150 transition duration-200 font-bold"
+              "w-full max-w-64.5 text-base md:text-[20px] py-2 px-6 "
             }
           />
         ) : (
@@ -29,7 +29,7 @@ const Hero = ({ bg, title, desc, btn, icons }) => {
         )}
       </div>
       {icons && (
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-row gap-4 md:bottom-30 md:left-0 md:translate-x-0 md:px-9 md:flex-col md:gap-6 cursor-pointer">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-row gap-4 lg:bottom-30 lg:left-0 lg:translate-x-0 lg:px-9 lg:flex-col lg:gap-6 cursor-pointer">
           <img
             src={fb}
             className="border-white border-[3px] rounded-full size-10 md:size-12 p-2 hover:scale-120 transition duration-200"
