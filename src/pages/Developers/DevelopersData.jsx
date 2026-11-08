@@ -37,10 +37,10 @@ function DevelopersData() {
           src={developer.images}
         />
 
-        <section className="flex justify-between my-[69px]">
+        <section className="flex justify-between mb-[131px]">
           <div>
-            <p className="font-lato font-bold text-[25px] md:text-[40px] text-[#8E1616]">
-              {developer.description_en}
+            <p className="font-lato font-bold text-[25px] md:text-[40px] text-[#8E1616] mt-[54px] mb-[11px]">
+              {developer.name_en}
             </p>
             <div className="flex gap-1">
               <p className="font-lato font-medium text-[20px] text-[#847D7D]">
@@ -89,14 +89,7 @@ function DevelopersData() {
                 Overview
               </p>
               <p className="font-lato text-[#847D7D] text-[26px] mb-[62px]">
-                Nestled in a residential area of Minusio, this magnificent
-                historic villa is for sale, fully renovated and ready to move
-                in. The spacious living areas, flooded with natural light thanks
-                to perfect sun exposure, create a unique and welcoming
-                atmosphere. A well-maintained, low-maintenance garden provides
-                the ideal setting for enjoying outdoor gatherings. Its proximity
-                to essential services and public transport also makes the villa
-                an ideal choice for families.
+                {developer.description_en}
               </p>
             </div>
           </div>
